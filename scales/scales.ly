@@ -23,7 +23,7 @@ g_scale = {
 
 \book {
   \header {
-    tagline = "#"
+    tagline = #f
   }
   \markup "D major"
   \score {

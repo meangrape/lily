@@ -37,7 +37,7 @@ olympic_high_jump = {
 
 \book {
   \header {
-    tagline = "#"
+    tagline = #f
   }
   \markup "Morning Dance"
   \score {

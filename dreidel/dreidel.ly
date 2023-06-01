@@ -15,7 +15,7 @@ dreidel = {
 
 \book {
   \header {
-    tagline = "#"
+    tagline = #f
   }
   \markup "Dreidel"
   \score {
