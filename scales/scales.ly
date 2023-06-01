@@ -25,12 +25,12 @@ g_scale = {
   \header {
     tagline = #f
   }
-  \markup "D major"
+  \markup "D"
   \score {
       \new Staff \d_scale
   }
 
-  \markup "G major"
+  \markup "G"
   \score {
       \new Staff \g_scale
   }
