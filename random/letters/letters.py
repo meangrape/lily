@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import random
+from pathlib import Path
 
 import jinja2
 
@@ -31,5 +32,6 @@ if __name__ == "__main__":
     environment.globals["bar"] = bar
     environment.globals["key"] = key
     template = environment.from_string(open("letters.j2").read())
+    Path("letters.pdf").unlink(missing_ok=True)
     with open("letters.ly", "w") as f:
         f.write(template.render())
