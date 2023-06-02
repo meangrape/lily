@@ -5,28 +5,30 @@ import random
 import jinja2
 
 
-bars = ['":|"', '"|."']
+bars = ['":|."', '"|."']
 # I'm only going to use quarter notes for now
 duration = ["2", "4"]
-keys = ["d \\major", "g \\major", "c \\major", "f \\major"]
+first = ["d", "d'", "c", "c'"]
+keys = ["d \\major", "g \\major"]
 notes = ["a", "b", "c", "cis", "d", "e", "fis", "g"]
+
+methods = ["\\markup { \\tiny \\italic pizz. }", "\\upbow", "d\\ownbow"]
 
 
 def key() -> str:
     return random.choice(keys)
 
-
 def bar(num: int) -> str:
-    content = []
-    for i in range(num):
+    content: list[str] = []
+    for _ in range(num):
         ctr = 4
         while ctr > 0:
             chance = random.choice(range(1, 100))
             if chance < 76:
-                content.append(random.choice(notes))
-                # # raise an octave
-                # if len(content) == 1:
-                #     content[0] = content[0] + "'"
+                if not content:
+                    content.append(random.choice(first))
+                else:
+                    content.append(random.choice(notes))
             else:
                 content.append("r")
             ctr -= 1
@@ -43,5 +45,5 @@ if __name__ == "__main__":
     environment.globals["bar"] = bar
     environment.globals["key"] = key
     template = environment.from_string(open("random_notes.j2").read())
-    with open("notes.ly", "w") as f:
+    with open("random_notes.ly", "w") as f:
         f.write(template.render())
