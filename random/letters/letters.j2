@@ -17,7 +17,7 @@
       {% set melody = bar(4) -%}
       {% set letters = melody -%}
       {% set melody = melody + '\\bar "|."' -%}
-<<
+{{ '<<' }}
   \new Staff
   {
       \clef bass
@@ -27,7 +27,7 @@
       {{ melody }}
   }
   \new NoteNames { {{ letters }} }
->>
+{{ '>>' }}
 
 {% endfor -%}
 }
