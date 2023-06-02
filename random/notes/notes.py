@@ -44,6 +44,6 @@ if __name__ == "__main__":
     environment = jinja2.Environment()
     environment.globals["bar"] = bar
     environment.globals["key"] = key
-    template = environment.from_string(open("random_notes.j2").read())
-    with open("random_notes.ly", "w") as f:
+    template = environment.from_string(open("notes.j2").read())
+    with open("notes.ly", "w") as f:
         f.write(template.render())
