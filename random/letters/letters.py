@@ -5,37 +5,22 @@ import random
 import jinja2
 
 
-bars = ['":|."', '"|."']
-# I'm only going to use quarter notes for now
-duration = ["2", "4"]
-first = ["d", "d'", "c", "c'"]
 keys = ["d \\major", "g \\major"]
 notes = ["a", "b", "c", "cis", "d", "e", "fis", "g"]
 
-methods = ["\\markup { \\tiny \\italic pizz. }", "\\upbow", "d\\ownbow"]
-
-
 def key() -> str:
     return random.choice(keys)
+
 
 def bar(num: int) -> str:
     content: list[str] = []
     for _ in range(num):
         ctr = 4
         while ctr > 0:
-            chance = random.choice(range(1, 100))
-            if chance < 76:
-                if not content:
-                    content.append(random.choice(first))
-                else:
-                    content.append(random.choice(notes))
-            else:
-                content.append("r")
+            content.append(random.choice(notes))
             ctr -= 1
         content.append("|")
-
-    # we always finish with a bar separator so replace it
-    content[-1] = "\\bar " + random.choice(bars)
+    content[-1] = "\\bar '|.'"
 
     return " ".join(content)
 
