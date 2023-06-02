@@ -5,6 +5,7 @@
 d_scale = {
   \relative {
     \clef bass
+    \key d \major
     \time 4/4
       d'\downbow d d r | cis cis cis r | b b b r | a a a r | g g g r | fis
       fis fis r | e e e r | d r r r | d  d d r | e e e r | fis fis
@@ -15,8 +16,9 @@ d_scale = {
 g_scale = {
   \relative {
     \clef bass
+    \key g \major
     \time 4/4
-    g,2\downbow a | b c | d e | f g | g f | e d | c b | a g \bar "|."
+    g,2\downbow a | b c | d e | fis g | g fis | e d | c b | a g \bar "|."
   }
 
 }
@@ -25,12 +27,12 @@ g_scale = {
   \header {
     tagline = #f
   }
-  \markup "D"
+  \markup "D major"
   \score {
       \new Staff \d_scale
   }
 
-  \markup "G"
+  \markup "G major"
   \score {
       \new Staff \g_scale
   }

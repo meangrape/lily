@@ -5,6 +5,7 @@
 dreidel = {
   \relative {
     \clef bass
+    \key g \major
     \time 4/4
       d^\markup { \tiny \italic pizz. } d e e | fis d r fis | a a g fis
       | e r r r | e e fis fis | g e r e | a g fis e | fis r r r | a fis a fis
