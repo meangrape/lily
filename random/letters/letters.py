@@ -8,6 +8,7 @@ import jinja2
 keys = ["d \\major", "g \\major"]
 notes = ["a", "b", "c", "cis", "d", "e", "fis", "g"]
 
+
 def key() -> str:
     return random.choice(keys)
 
