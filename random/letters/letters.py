@@ -22,9 +22,8 @@ def bar(num: int) -> str:
             content.append(random.choice(notes))
             ctr -= 1
         content.append("|")
-    content[-1] = '\\bar "|."'
 
-    return " ".join(content)
+    return " ".join(content)[0:-1]
 
 
 if __name__ == "__main__":

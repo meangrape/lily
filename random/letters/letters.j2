@@ -13,92 +13,21 @@
 }
 
 \book {
-  \score {
-      \new Staff
-      {
-          \clef bass
-          \key {{ key() }}
-          \time 4/4
-          \omit Score.BarNumber
-          {{ bar(4) }}
-      }
+  {% for i in range(1, 8) -%}
+      {% set melody = bar(4) -%}
+      {% set letters = melody -%}
+      {% set melody = melody + '\\bar "|."' -%}
+<<
+  \new Staff
+  {
+      \clef bass
+      \key {{ key() }}
+      \time 4/4
+      \omit Score.BarNumber
+      {{ melody }}
   }
+  \new NoteNames { {{ letters }} }
+>>
 
-  \score {
-      \new Staff
-      {
-          \clef bass
-          \key {{ key() }}
-          \time 4/4
-          \omit Score.BarNumber
-          {{ bar(4) }}
-      }
-  }
-
-  \score {
-      \new Staff
-      {
-          \clef bass
-          \key {{ key() }}
-          \time 4/4
-          \omit Score.BarNumber
-          {{ bar(4) }}
-      }
-  }
-
-  \score {
-      \new Staff
-      {
-          \clef bass
-          \key {{ key() }}
-          \time 4/4
-          \omit Score.BarNumber
-          {{ bar(4) }}
-      }
-  }
-
-  \score {
-      \new Staff
-      {
-          \clef bass
-          \key {{ key() }}
-          \time 4/4
-          \omit Score.BarNumber
-          {{ bar(4) }}
-      }
-  }
-
-  \score {
-      \new Staff
-      {
-          \clef bass
-          \key {{ key() }}
-          \time 4/4
-          \omit Score.BarNumber
-          {{ bar(4) }}
-      }
-  }
-
-  \score {
-      \new Staff
-      {
-          \clef bass
-          \key {{ key() }}
-          \time 4/4
-          \omit Score.BarNumber
-          {{ bar(4) }}
-      }
-  }
-
-  \score {
-      \new Staff
-      {
-          \clef bass
-          \key {{ key() }}
-          \time 4/4
-          \omit Score.BarNumber
-          {{ bar(4) }}
-      }
-  }
+{% endfor -%}
 }
-
