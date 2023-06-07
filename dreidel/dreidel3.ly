@@ -28,5 +28,10 @@ dreidel = {
   \score {
       \new Staff \dreidel
     }
+
+    \score {
+      \midi {}
+      \new Staff \with {midiInstrument = "cello"} \dreidel
+    }
 }
 
